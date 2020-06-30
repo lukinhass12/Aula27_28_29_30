@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace Aula27_28_29_30
 {
@@ -9,10 +10,22 @@ namespace Aula27_28_29_30
 
             Produto p1 = new Produto();
             p1.Codigo = 1;
-            p1.Nome = "Masterrr";
-            p1.Preco = 123000f;
+            p1.Nome = "Destiny";
+            p1.Preco = 30.00f;
 
             p1.Cadastrar(p1);
+
+            List <Produto> lista = p1.Ler();
+            
+            foreach(Produto item in lista)
+            {
+                System.Console.WriteLine($"{item.Nome} - R${item.Preco} ");
+            }
+            Produto jogo = lista.Find(x=> x.Nome == "game");
+            System.Console.WriteLine(jogo.Nome);
+
+
+  
         }
     }
 }
