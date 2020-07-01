@@ -14,18 +14,17 @@ namespace Aula27_28_29_30
             p1.Preco = 30.00f;
 
             p1.Cadastrar(p1);
+            p1.Remover("Fender");
 
             List <Produto> lista = p1.Ler();
             
-            foreach(Produto item in lista)
+            foreach(Produto item in lista) 
             {
-                System.Console.WriteLine($"{item.Nome} - R${item.Preco} ");
+            Console.WriteLine($"{item.Nome} - R$ {item.Preco}");
             }
-            Produto jogo = lista.Find(x=> x.Nome == "game");
-            System.Console.WriteLine(jogo.Nome);
 
-
-  
         }
+        
+        
     }
 }
