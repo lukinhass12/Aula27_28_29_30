@@ -1,30 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Aula27_28_29_30
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
+namespace Aula27_28_29_30 {
+    class Program {
+        static void Main (string[] args) {
 
-            Produto p1 = new Produto();
+            Produto p1 = new Produto ();
             p1.Codigo = 1;
-            p1.Nome = "Destiny";
-            p1.Preco = 30.00f;
+            p1.Nome = "dota2";
+            p1.Preco = 7500f;
 
-            p1.Cadastrar(p1);
-            p1.Remover("Fender");
+            p1.Cadastrar (p1);
+            p1.Remover ("tlou");
 
-            List <Produto> lista = p1.Ler();
-            
-            foreach(Produto item in lista) 
-            {
-            Console.WriteLine($"{item.Nome} - R$ {item.Preco}");
+            Produto alterado = new Produto ();
+            alterado.Codigo = 2;
+            alterado.Nome = "invoker";
+            alterado.Preco = 140f;
+
+            p1.Alterar (alterado);
+
+            List<Produto> lista = p1.Ler ();
+
+            foreach (Produto item in lista) {
+                Console.WriteLine ($"{item.Nome} - R${item.Preco}");
             }
 
         }
-        
-        
     }
 }
